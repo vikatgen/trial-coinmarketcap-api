@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan());
 app.use(
     cors({
-        origin: ["http://localhost:5173"],
+        origin: ["http://localhost:3000"],
         optionsSuccessStatus: 200,
     })
 );
@@ -32,7 +32,7 @@ app.get("/cryptocurrency/categories", async (request, response) => {
         });
     }
 
-    response.status(200).json(categoryResponse);
+    response.status(200).json(categoryResponse.data);
 });
 
 app.listen(PORT, () => {
